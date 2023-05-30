@@ -4,7 +4,8 @@ import SearchBar from "../components/SearchBar";
 
 const CardContainer = () => {
   const [repositories, setRepositories] = useState([]);
-  const accessToken = "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";
+  const accessToken =
+    "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";
 
   // Fetch function
   const fetchRepositories = async () => {
