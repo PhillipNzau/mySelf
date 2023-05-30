@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ repo }) => {
   return (
     <div className="group relative border border-slate-500 rounded-xl p-6 max-w-[382px] min-h-60 md:h-52 flex flex-col justify-between transition-all duration-300 hover:border-slate-100 hover:cursor-pointer">
       <div className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -27,14 +27,11 @@ const Card = () => {
           alt="img"
         />
         <div>
-          <p className="text-white font-bold text-lg">title</p>
+          <p className="text-white font-bold text-lg">{repo.name}</p>
           <p className="text-gray-500 text-sm">www.link-to-site.com</p>
         </div>
       </div>
-      <p className="text-gray-500 text-sm text-clip ">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae
-        distinctio natus nobis explicabo dolor provident!
-      </p>
+      <p className="text-gray-500 text-sm truncate ">{repo.description}</p>
       <p className="text-gray-500 text-sm">Updated 52 days ago</p>
     </div>
   );
