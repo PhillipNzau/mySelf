@@ -30,7 +30,9 @@ const Card = ({ repo }) => {
         />
         <div>
           <p className="text-white font-bold text-lg">{repo.name}</p>
-          <p className="text-gray-500 text-sm">www.link-to-site.com</p>
+          <p className="text-gray-500 text-sm">
+            {url !== null ? url : "coming soon"}
+          </p>
         </div>
       </div>
       <p className="text-gray-500 text-sm line-clamp-3">{repo.description}</p>

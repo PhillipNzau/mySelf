@@ -4,14 +4,13 @@ import SearchBar from "../components/SearchBar";
 
 const CardContainer = () => {
   const [repositories, setRepositories] = useState([]);
-  const accessToken =
-    "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";
+  const accessToken = import.meta.env.VITE_APP_GIT_TOKEN;
 
   // Fetch function
   const fetchRepositories = async () => {
     try {
       const response = await fetch(
-        "https://api.github.com/user/repos?affiliation=owner",
+        "https://api.github.com/user/repos?affiliation=owner&sort=updated",
         {
           headers: {
             Authorization: `token ${accessToken}`,
