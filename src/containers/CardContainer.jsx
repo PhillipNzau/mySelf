@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 
 const CardContainer = () => {
   const [repositories, setRepositories] = useState([]);
+  const accessToken = "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";
 
   // Fetch function
   const fetchRepositories = async () => {
@@ -12,7 +13,7 @@ const CardContainer = () => {
         "https://api.github.com/user/repos?affiliation=owner",
         {
           headers: {
-            Authorization: "token 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",
+            Authorization: `token ${accessToken}`,
             Accept: "application/vnd.github.v3+json",
           },
         }

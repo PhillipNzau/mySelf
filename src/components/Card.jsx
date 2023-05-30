@@ -31,7 +31,7 @@ const Card = ({ repo }) => {
           <p className="text-gray-500 text-sm">www.link-to-site.com</p>
         </div>
       </div>
-      <p className="text-gray-500 text-sm truncate ">{repo.description}</p>
+      <p className="text-gray-500 text-sm line-clamp-3">{repo.description}</p>
       <p className="text-gray-500 text-sm">Updated 52 days ago</p>
     </div>
   );
