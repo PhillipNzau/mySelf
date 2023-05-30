@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
+import ViewMoreButton from "../components/ViewMoreButton";
 
 const CardContainer = () => {
-  const [repositories, setRepositories] = useState([]);
   const accessToken = import.meta.env.VITE_APP_GIT_TOKEN;
+
+  const [repositories, setRepositories] = useState([]);
+  const [displayCount, setDisplayCount] = useState(6);
+
+  const handleViewMore = () => {
+    setDisplayCount(displayCount + 6);
+  };
 
   // Fetch function
   const fetchRepositories = async () => {
@@ -38,10 +45,15 @@ const CardContainer = () => {
     <div className="w-2/3 flex flex-col gap-y-6 mx-auto ">
       <SearchBar />
       <div className="grid grid-cols-3 gap-4">
-        {repositories.map((repo) => (
+        {repositories.slice(0, displayCount).map((repo) => (
           <Card key={repo.id} repo={repo} />
         ))}
       </div>
+      <ViewMoreButton
+        displayCount={displayCount}
+        repositories={repositories}
+        viewMore={handleViewMore}
+      />
     </div>
   );
 };
