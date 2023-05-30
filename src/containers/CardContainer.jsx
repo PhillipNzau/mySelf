@@ -25,7 +25,6 @@ const CardContainer = () => {
 
       const data = await response.json();
       setRepositories(data);
-      console.log("repos", repositories);
     } catch (error) {
       console.error(error);
     }

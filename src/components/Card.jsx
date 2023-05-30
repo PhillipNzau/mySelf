@@ -1,8 +1,12 @@
 import React from "react";
+import dayjs from "dayjs/esm/index.js";
 
 const Card = ({ repo }) => {
   const url = repo.homepage;
-  console.log(url);
+  const updatedDate = dayjs(repo.updated_at);
+  const today = dayjs(dayjs().format());
+  const daysDiff = today.diff(updatedDate, "day");
+
   return (
     <div className="group relative border border-slate-500 rounded-xl p-6 max-w-[382px] min-h-60 md:h-52 flex flex-col justify-between transition-all duration-300 hover:border-slate-100 hover:cursor-pointer">
       <div className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -36,7 +40,7 @@ const Card = ({ repo }) => {
         </div>
       </div>
       <p className="text-gray-500 text-sm line-clamp-3">{repo.description}</p>
-      <p className="text-gray-500 text-sm">Updated 52 days ago</p>
+      <p className="text-gray-500 text-sm">Updated {daysDiff} days ago</p>
     </div>
   );
 };
