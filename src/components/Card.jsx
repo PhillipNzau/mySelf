@@ -1,14 +1,20 @@
 import React from "react";
 import dayjs from "dayjs/esm/index.js";
 
-const Card = ({ repo }) => {
+const Card = ({ repo, isColumn }) => {
   const url = repo.homepage;
   const updatedDate = dayjs(repo.updated_at);
   const today = dayjs(dayjs().format());
   const daysDiff = today.diff(updatedDate, "day");
 
   return (
-    <div className="group relative border border-slate-500 rounded-xl p-6 max-w-[382px] min-h-60 md:h-52 flex flex-col justify-between transition-all duration-300 hover:border-slate-100 hover:cursor-pointer">
+    <div
+      className={`group relative border border-slate-500 rounded-xl p-6  flex  justify-between gap-4 transition-all duration-300 hover:border-slate-100 hover:cursor-pointer ${
+        isColumn
+          ? "flex-col md:flex-row md:items-center"
+          : "flex-col  max-w-[382px] min-h-60 md:h-52"
+      }`}
+    >
       <div className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +45,16 @@ const Card = ({ repo }) => {
           </p>
         </div>
       </div>
-      <p className="text-gray-500 text-sm line-clamp-3">{repo.description}</p>
-      <p className="text-gray-500 text-sm">Updated {daysDiff} days ago</p>
+      <p
+        className={`text-gray-500 text-sm line-clamp-3 ${
+          isColumn ? "md:w-96" : ""
+        }`}
+      >
+        {repo.description}
+      </p>
+      <p className="text-gray-500 text-sm">
+        Updated {daysDiff == 0 ? "Today" : `${daysDiff} days ago`}{" "}
+      </p>
     </div>
   );
 };

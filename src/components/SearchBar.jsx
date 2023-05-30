@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-const SearchBar = () => {
-  const [isColumn, setIsColumn] = useState(false);
-
+const SearchBar = ({ isColumn, onClick, onChange, searchQuery }) => {
   return (
     <div className="flex items-center gap-x-2 ">
       <div className="transition-all duration-300 hover:border-slate-100 hover:cursor-pointer border w-full border-slate-500 rounded-md relative flex items-center gap-x-2 px-4 py-2">
@@ -24,7 +22,8 @@ const SearchBar = () => {
         <input
           className="outline-none bg-transparent w-full"
           type="search"
-          name="search"
+          value={searchQuery}
+          onChange={onChange}
           id="search"
           placeholder="Search..."
         />
@@ -35,7 +34,7 @@ const SearchBar = () => {
         {/* Row */}
         <div
           onClick={() => {
-            setIsColumn(false);
+            onClick(false);
           }}
           className={`hover:bg-gray-600 rounded-md p-1 ${
             !isColumn ? "bg-gray-600" : ""
@@ -60,7 +59,7 @@ const SearchBar = () => {
         {/* Column */}
         <div
           onClick={() => {
-            setIsColumn(true);
+            onClick(true);
           }}
           className={`hover:bg-gray-600 rounded-md p-1 ${
             isColumn ? "bg-gray-600" : ""

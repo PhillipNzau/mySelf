@@ -3,6 +3,7 @@ import "./App.css";
 import phillip from "./assets/phillip.webp";
 import CardContainer from "./containers/CardContainer";
 import Header from "./components/Header";
+import SkillContainer from "./containers/SkillContainer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,3 +17,12 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <div className="px-20 grid grid-cols-5">
+        <div className="col-span-4">
+          <CardContainer />
+        </div>
+
+        <SkillContainer /> */
+}

@@ -8,6 +8,8 @@ const CardContainer = () => {
 
   const [repositories, setRepositories] = useState([]);
   const [displayCount, setDisplayCount] = useState(6);
+  const [isColumn, setIsColumn] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleViewMore = () => {
     setDisplayCount(displayCount + 6);
@@ -41,17 +43,39 @@ const CardContainer = () => {
     fetchRepositories();
   }, []);
 
+  //   handle setIs Column
+  const handleSetIsColumn = (state) => {
+    setIsColumn(state);
+  };
+
+  // Handle search
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  // Actual filter
+  const filteredData = repositories.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="w-2/3 flex flex-col gap-y-6 mx-auto ">
-      <SearchBar />
-      <div className="grid grid-cols-3 gap-4">
-        {repositories.slice(0, displayCount).map((repo) => (
-          <Card key={repo.id} repo={repo} />
+      <SearchBar
+        isColumn={isColumn}
+        onClick={handleSetIsColumn}
+        onChange={handleSearch}
+        searchQuery={searchQuery}
+      />
+      <div
+        className={`grid gap-4 ${isColumn ? "grid-cols-1" : " grid-cols-3"}`}
+      >
+        {filteredData.slice(0, displayCount).map((repo) => (
+          <Card key={repo.id} repo={repo} isColumn={isColumn} />
         ))}
       </div>
       <ViewMoreButton
         displayCount={displayCount}
-        repositories={repositories}
+        repositories={filteredData}
         viewMore={handleViewMore}
       />
     </div>
