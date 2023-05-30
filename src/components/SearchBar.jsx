@@ -5,7 +5,7 @@ const SearchBar = () => {
 
   return (
     <div className="flex items-center gap-x-2 ">
-      <div className="border w-full border-slate-500 rounded-md relative flex items-center gap-x-2 px-4 py-2">
+      <div className="transition-all duration-300 hover:border-slate-100 hover:cursor-pointer border w-full border-slate-500 rounded-md relative flex items-center gap-x-2 px-4 py-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
