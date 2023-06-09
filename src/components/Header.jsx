@@ -7,7 +7,7 @@ const Header = () => {
         <div className="w-12 rounded-full">
           <img
             className="object-contain rounded-full w-full h-full"
-            src="/src/assets/phillip.webp"
+            src="/phillip.webp"
           />
         </div>
         <p className="font-bold text-xl text-white">Phillip Nzau</p>

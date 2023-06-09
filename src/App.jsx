@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import phillip from "./assets/phillip.webp";
+import phillip from "/phillip.webp";
 import CardContainer from "./containers/CardContainer";
 import Header from "./components/Header";
 import SkillContainer from "./containers/SkillContainer";
