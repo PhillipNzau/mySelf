@@ -20,7 +20,8 @@ function App() {
       }`}
     >
       <Header onToggle={toggleMenu} isMenuOpen={isMenuOpen} />
-      <CardContainer />
+
+      {!isMenuOpen && <CardContainer />}
     </div>
   );
 }
