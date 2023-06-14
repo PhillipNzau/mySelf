@@ -7,10 +7,19 @@ import SkillContainer from "./containers/SkillContainer";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className="px-6 md:px-12 py-8 md:py-14 flex flex-col gap-y-6">
-      <Header />
+    <div
+      className={` h-screen px-6 md:px-12 py-8 md:py-14 flex flex-col gap-y-6 ${
+        isMenuOpen ? "overflow-hidden" : "overflow-auto"
+      }`}
+    >
+      <Header onToggle={toggleMenu} isMenuOpen={isMenuOpen} />
       <CardContainer />
     </div>
   );
