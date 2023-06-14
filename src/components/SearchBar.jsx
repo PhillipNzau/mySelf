@@ -30,7 +30,7 @@ const SearchBar = ({ isColumn, onClick, onChange, searchQuery }) => {
       </div>
 
       {/* Change orientation */}
-      <div className="flex items-center gap-x-2 w-min border border-slate-500 p-[4px] rounded-md hover:cursor-pointer">
+      <div className="hidden  md:flex items-center gap-x-2 w-min border border-slate-500 p-[4px] rounded-md hover:cursor-pointer">
         {/* Row */}
         <div
           onClick={() => {

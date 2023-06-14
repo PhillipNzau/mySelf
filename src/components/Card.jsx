@@ -15,7 +15,11 @@ const Card = ({ repo, isColumn }) => {
           : "flex-col  md:max-w-[382px] min-h-60 md:h-52"
       }`}
     >
-      <div className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+      <a
+        href={url !== null ? url : "#"}
+        target="_blank"
+        className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -30,7 +34,7 @@ const Card = ({ repo, isColumn }) => {
             d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
           />
         </svg>
-      </div>
+      </a>
 
       <div className="flex items-center gap-x-4 ">
         <img
@@ -39,7 +43,9 @@ const Card = ({ repo, isColumn }) => {
           alt="img"
         />
         <div>
-          <p className="text-white font-bold text-lg">{repo.name}</p>
+          <p className="text-white font-bold text-lg font-heading">
+            {repo.name}
+          </p>
           <p className="text-gray-500 text-sm">
             {url !== null ? url : "coming soon"}
           </p>

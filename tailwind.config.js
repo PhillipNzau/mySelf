@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        heading: ['WhyteInktrap-Bold', 'sans-serif'],
+        poppins: ['Poppins-Regular', 'sans-serif'],
+        poppinsBold: ['Poppins-SemiBold', 'sans-serif']
+
+      }
+    },
   },
  
   plugins: [

@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="px-12 py-8 md:py-14 flex flex-col gap-y-6">
+    <div className="px-6 md:px-12 py-8 md:py-14 flex flex-col gap-y-6">
       <Header />
       <CardContainer />
     </div>
