@@ -16,23 +16,6 @@ const Header = ({ onToggle, isMenuOpen }) => {
           </p>
         </div>
 
-        <div className="hidden md:flex items-center gap-x-4">
-          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
-            Work
-          </p>
-          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
-            About
-          </p>
-          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
-            Contact
-          </p>
-          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
-            Github
-          </p>
-        </div>
-
-        {/* Menu button */}
-
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +52,22 @@ const Header = ({ onToggle, isMenuOpen }) => {
             />
           </svg>
         </div>
+        <div className="hidden md:flex items-center gap-x-4">
+          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
+            Work
+          </p>
+          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
+            About
+          </p>
+          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
+            Contact
+          </p>
+          <p className="text-gray-500 text-sm hover:text-white hover:cursor-pointer transition duration-300">
+            Github
+          </p>
+        </div>
+
+        {/* Menu button */}
       </div>
 
       <div
