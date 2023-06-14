@@ -59,7 +59,7 @@ const CardContainer = () => {
   );
 
   return (
-    <div className="w-2/3 flex flex-col gap-y-6 mx-auto ">
+    <div className="md:w-2/3 flex flex-col gap-y-6 mx-auto w-full ">
       <SearchBar
         isColumn={isColumn}
         onClick={handleSetIsColumn}
@@ -67,7 +67,9 @@ const CardContainer = () => {
         searchQuery={searchQuery}
       />
       <div
-        className={`grid gap-4 ${isColumn ? "grid-cols-1" : " grid-cols-3"}`}
+        className={`grid gap-4 ${
+          isColumn ? "grid-cols-1" : " md:grid-cols-3 grid-cols-1 "
+        }`}
       >
         {filteredData.slice(0, displayCount).map((repo) => (
           <Card key={repo.id} repo={repo} isColumn={isColumn} />

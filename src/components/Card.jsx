@@ -12,7 +12,7 @@ const Card = ({ repo, isColumn }) => {
       className={`group relative border border-slate-500 rounded-xl p-6  flex  justify-between gap-4 transition-all duration-300 hover:border-slate-100 hover:cursor-pointer ${
         isColumn
           ? "flex-col md:flex-row md:items-center"
-          : "flex-col  max-w-[382px] min-h-60 md:h-52"
+          : "flex-col  md:max-w-[382px] min-h-60 md:h-52"
       }`}
     >
       <div className="absolute -top-2 -right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">

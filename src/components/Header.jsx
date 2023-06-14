@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="h-max flex items-center justify-between w-2/3 mx-auto">
+    <div className="h-max flex items-center justify-between w-full  md:w-2/3 mx-auto">
       <div className="flex items-center gap-x-4 ">
         <div className="w-12 rounded-full">
           <img
