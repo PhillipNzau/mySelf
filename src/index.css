@@ -4,15 +4,15 @@
 
 @font-face {
   font-family: "WhyteInktrap-Bold";
-  src: url("/fonts/WhyteInktrap-Bold.woff2") format("woff2");
+  src: url("assets/fonts/WhyteInktrap-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Poppins-Regular";
-  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  src: url("assets/public/fonts/Poppins-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Poppins-SemiBold";
-  src: url("/fonts/Poppins-SemiBold.woff2") format("woff2");
+  src: url("assets/public/fonts/Poppins-SemiBold.woff2") format("woff2");
 }
 
 html {
